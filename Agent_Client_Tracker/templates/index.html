@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent-Client Tracker</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            display: block;
+            margin: 10px auto;
+            padding: 5px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Agent-Client Tracker</h2>
+
+    <form id="tracker-form">
+        <label for="agent">Agent Name:</label>
+        <input type="text" id="agent" name="agent" required>
+    
+        <label for="client">Client Name:</label>
+        <input type="text" id="client" name="client" required>
+    
+        <label for="interaction">Interaction:</label>
+        <textarea id="interaction" name="interaction" required></textarea>
+    
+        <button type="submit">Add Interaction</button>
+    </form>
+
+    <h3>Search Interactions</h3>
+    <input type="text" id="search" placeholder="Search by Agent or Client">
+    
+    <table id="interaction-table">
+        <thead>
+            <tr>
+                <th>Agent</th>
+                <th>Client</th>
+                <th>Interaction</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
